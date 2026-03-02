@@ -127,6 +127,11 @@ ensure_venv() {
   source "$VENV_DIR/bin/activate"
   python -m pip install -U pip
   python -m pip install -U huggingface_hub
+
+  # Install cpp_server runtime deps (librosa, fastapi deps, etc.)
+  if [[ -f "$PROJECT_DIR/cpp_server/requirements.txt" ]]; then
+    python -m pip install -r "$PROJECT_DIR/cpp_server/requirements.txt"
+  fi
 }
 
 download_models() {
