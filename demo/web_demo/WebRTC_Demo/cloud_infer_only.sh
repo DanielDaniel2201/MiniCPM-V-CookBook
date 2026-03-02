@@ -213,6 +213,7 @@ start_infer() {
     cd "$LLAMACPP_ROOT"
     CUDA_VISIBLE_DEVICES="$gpu_devices" \
     REF_AUDIO="$CPP_REF_AUDIO" \
+    REGISTER_URL="" \
     python "$CPP_SERVER_SCRIPT" \
       --llamacpp-root "$LLAMACPP_ROOT" \
       --model-dir "$MODEL_DIR" \
