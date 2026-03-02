@@ -26,7 +26,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/WebRTC_Demo"
+# This script lives inside the WebRTC_Demo directory already.
+PROJECT_DIR="$SCRIPT_DIR"
 CPP_SERVER_SCRIPT="$PROJECT_DIR/cpp_server/minicpmo_cpp_http_server.py"
 CPP_REF_AUDIO="$PROJECT_DIR/cpp_server/assets/default_ref_audio.wav"
 
