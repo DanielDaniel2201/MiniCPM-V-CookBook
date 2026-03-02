@@ -140,6 +140,10 @@ download_models() {
   info "Downloading selected model files from $HF_MODEL_REPO (quant=$LLM_QUANT)"
   mkdir -p "$MODEL_DIR"
 
+  export HF_MODEL_REPO
+  export MODEL_DIR
+  export LLM_QUANT
+
   python - <<'PY'
 import os
 from huggingface_hub import snapshot_download
